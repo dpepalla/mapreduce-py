@@ -11,7 +11,7 @@ class FlightsByCarriersMapper:
     def mapping(self):
         for row in csv.reader(iter(sys.stdin.readline, '')):
             if row[0] != 'Year':
-                print('{}\t{}'.format(row[8], 1))
+                print('{}\t{}'.format(row[17], 1))
 
 
 def main(argv):
