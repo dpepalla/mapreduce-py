@@ -17,11 +17,18 @@ Need to use cisc-525-util repository to:
 ./word_count_run.sh /user/student/shakespeare/tragedy/othello.txt /tmp/othello
 ```
 
-## Run airline performance MR application
+### Run  MR application for flights by Carrier
+./fbc_run.sh /user/student/airline/2000.csv /tmp/2000
+###
 
-```shell script
-./fbc_run.sh /user/student/airline/1987.csv /tmp/1987
-```
+### Run MR application for flights by Origin
+./fbO.sh /user/student/airline/2000.csv /tmp/py-airline-carriers-2000
+###
+
+### Run MR application for flights by Destination
+./fbD.sh /user/student/airline/2000.csv /tmp/py-airline-Destination-2000
+###
+
 
 ## Unit test
 

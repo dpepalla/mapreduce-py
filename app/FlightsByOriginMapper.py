@@ -4,19 +4,19 @@ import sys
 import csv
 
 
-class FlightsByCarriersMapper:
+class FlightsByOriginMapper:
     def __init__(self):
         pass
 
     def mapping(self):
         for row in csv.reader(iter(sys.stdin.readline, '')):
             if row[0] != 'Year':
-                print('{}\t{}'.format(row[8], 1))
+                print('{}\t{}'.format(row[16], 1))
 
 
 def main(argv):
-    flights_by_carriers_mapper = FlightsByCarriersMapper()
-    flights_by_carriers_mapper.mapping()
+    flights_by_origin_mapper = FlightsByOriginMapper()
+    flights_by_origin_mapper.mapping()
 
 
 if __name__ == "__main__":

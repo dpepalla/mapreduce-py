@@ -8,17 +8,17 @@
 echo './fbc_run.sh input-path output-path'
 hdfs dfs -rm -r $2
 yarn jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming*.jar \
-  -mapper  /home/student/cisc_525/mapreduce-py/app/FlightsByCarriersMapper.py \
-  -reducer  /home/student/cisc_525/mapreduce-py/app/FlightsByCarriersReducer.py -input $1 -output $2
+  -mapper  /home/student/cisc_525/mapreduce-py/app/FlightsByOriginMapper.py \
+  -reducer  /home/student/cisc_525/mapreduce-py/app/FlightsByOriginReducer.py -input $1 -output $2
 
 value=$(hdfs dfs -cat $2/part-00000)
 value=$(echo $value | sed -r 's/\t/ /g')
 echo $value
 
 if [[ $value == *"$3"* ]]; then
-  echo "FlightsByCarriers runs successfully ($1)!"
+  echo "FlightsByOrigin runs successfully ($1)!"
 else
-  echo "FlightsByCarriers runs UNsuccessfully ($1)"
+  echo "FlightsByOrigin runs UNsuccessfully ($1)"
   echo "Search: '$3'"
   echo "Actual:"; echo "$value"
 fi
